@@ -15,7 +15,10 @@ export class CreateTable implements CreateTableUseCase {
     execute({base, limit = 10}: CreateTableOptions) {
         let content = "";
         for (let index = 1; index <= limit; index++) {
-            content += `${base} x ${index} = ${Number(base) * index}\n`;
+            content += `${base} x ${index} = ${Number(base) * index}`;
+            if (index < limit) {
+                content += "\n";
+            }
         }
 
         return content;
